@@ -1,0 +1,481 @@
+/* * {
+    border: 1px solid red;
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Ubuntu&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    filter: blur(1);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+
+#navimg img {
+    width: 66px;
+}
+
+ nav {
+    /* width: 100%; */
+    margin: auto;
+} 
+#navul {
+    display: flex;
+}
+
+#navul ul {
+    display: flex;
+}
+
+
+#navul li {
+    color: #fffff8;
+    margin: 2px;
+    list-style: none;
+}
+#navul li a{
+    color: white;
+    text-decoration: none;
+    padding:7px;
+    border-radius: 20px;
+}
+
+/* Section Css */
+section {
+    flex: 1;
+}
+
+section h1,
+section h3 {
+    text-align: center;
+    color: #0093ff;
+    font-family:'Merriweather', 'sans-serif';
+}
+button{
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    border: 1px solid #0000ff61;
+    box-shadow: 1px 1px 2px black;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    border-radius:5px ;
+}
+button:hover{
+    background-color: #004ff9;;
+    box-shadow: 1px 1px 5px 1px black;
+}
+#main-prompt{
+    position: absolute;
+    top:0;
+    left: 0;
+    display: hidden;
+    width: 100%;
+}
+#prompt{
+    background-color: #24ff0a61;
+    font-family:  'sans-serif';
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    top: 68px;
+    animation: prompt-open 1s;
+}
+@keyframes prompt-open{
+    0% {height: 0; opacity: 0;}
+    100% {height:32px; opacity:1;}
+}
+#prompt>p{
+    margin: 0;
+    font-size: 18px;
+    
+}
+#prompt>button{
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: black;
+    font-size: 18px;
+    width: 50px;
+}
+
+#form {
+    text-align: center;
+
+}
+
+.inputtitle,
+.inputdesc {
+    width: 60%;
+    font-weight: bold;
+    font-size: 17px;
+
+}
+
+.inputtitle:hover,
+.inputdesc:hover {
+    border: 2px solid red;
+}
+
+#titlediv {
+    height: 32px;
+}
+
+.inputdesc {
+    height: 100px;
+}
+
+#descdiv {
+    height: 130px;
+}
+#descdiv>p,#titlediv>p{
+    margin-top: 0px;
+    color: red;
+    /* display: none; */
+}
+#instruction_para{
+    margin: 6px;
+    display: none;
+}
+#instruction_para>a{
+    /* font-family: 'Merriweather','sans-serif'; */
+    color: red;
+    text-decoration: none;
+    padding: 3px;
+}
+#submitnote {
+    padding: 5px 8px;
+    margin: 5px;
+    background-color: #ff0000c4;
+    color: whitesmoke;
+    width: 70px;
+    border: 1px inset blue;
+    border-radius: 13px 0px 7px 4px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+#submitnote:hover {
+    background-color: red;
+    box-shadow: 1px 1px 5px 1px black;
+
+}
+
+.searcharea {
+    max-width: 1100px;
+    margin: 2px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 26px;
+    align-items: end;
+}
+
+.searcharea>div>p {
+    display: inline;
+    color: #2793ff;
+    font-family: 'Merriweather','sans-serif';
+    font-weight: bold;
+}
+
+.searcharea>div:nth-child(2)>input {
+    padding: 4px;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: auto;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out
+}
+
+.searcharea>div:nth-child(2)>input:hover {
+    border-color: red;
+}
+
+/* Table CSS*/
+#Notelist {
+    max-width: 1100px;
+    margin: auto;
+    overflow: scroll;
+}
+
+#Notelist>table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Merriweather', 'sans-serif';
+    font-size: 14px;
+    border-bottom: 2px outset black;
+
+}
+
+#Notelist>table>thead {
+    background-color: gray;
+}
+
+#Notelist>table>thead>tr {
+    position: stick
+}
+
+#Notelist>table>thead th {
+    color: #fffff8;
+    background-color: #252222;
+    padding: 10px;
+}
+
+#Notelist>table>tbody tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+tbody tr {
+    vertical-align: top;
+}
+
+#Notelist>table>tbody td {
+    padding-top: 15px;
+}
+
+tbody>tr>td:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.notelistrow>td>button {
+    padding: 7px 9px;
+}
+
+
+
+#notesno {
+    min-width: 35px;
+}
+
+#notetitle {
+    min-width: 200px;
+    max-width: 220px;
+}
+
+#notedesc {
+    min-width: 450px;
+}
+
+
+#actionnote {
+    min-width: 80px;
+}
+
+@media only screen and (min-width:430px) {
+    #navul{width: 284px;}
+}
+@media only screen and (min-width:870px) {
+    #Notelist {
+        overflow: hidden;
+    }
+}
+
+.notelistrow td:nth-child(2),.notelistrow td:nth-child(3) {
+    word-break: break-all;
+}
+.notelistrow td:nth-child(2){
+    min-width: 250px;
+    max-width: 320px;
+}
+
+
+.hide {
+    display: none;
+}
+.sort-arrow-btn,.sort-no-btn{
+    background-color: #0619ff;
+    margin: 1px;
+    
+}
+
+@media only screen and (max-width:699px){
+.sortno .sort-no-btn{
+    display: none;
+}
+}
+@media only screen and (min-width:700px){
+  
+    .sortno .sort-arrow-btn{
+        display: none;
+    }
+    }
+
+
+
+/* footer CSS */
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+footer>div>a>img {
+    width: 40px;
+    border-radius: 40%;
+}
+
+footer>div>a:nth-child(2)>img {
+    filter: invert(100%);
+
+}
+
+footer>p {
+    margin: 7px;
+}
+
+
+
+#modal-button {
+    visibility: hidden;
+}
+
+#modal-back {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+    opacity: 1;
+    transition: 0.2s ease-in;
+}
+
+#edit-modal {
+    background: #fff;
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 4px;
+    left: calc(50% - 200px);
+    top: 12%;
+    z-index: 1000;
+    display: none;
+    opacity: 1;
+    position: fixed;
+    cursor: auto;
+    box-shadow: 0 3px 7px black;
+}
+
+.close-modal-btn {
+    text-align: end;
+
+}
+
+.close-modal {
+
+    padding: 3px 6px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+#modal-titlediv,
+#modal-descdiv {
+    margin: 10px 5px;
+    text-align: center;
+}
+#modal-titlediv{
+    height: 47px;
+}
+#modal-descdiv{
+    height: 129px;
+}
+
+#modal-titlediv>input,
+#modal-descdiv>textarea {
+    width: 370px;
+}
+
+#edit-modal>form>h2 {
+    color: #2793ff;
+    text-align: center;
+    margin: 2px;
+}
+#modal-titlediv>label,
+#modal-descdiv>label{
+    color: #2793ff;
+    font-size: 18px;
+    font-family:'Merriweather', 'sans-serif';
+}
+#modal-update-button{
+    text-align: end;
+}
+#modal-update-button>input{
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    border: 1px solid #0000ff61;
+    box-shadow: 1px 1px 2px black;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    border-radius:5px ;
+    padding: 5px 15px;
+}
+#modal-update-button>input:hover{
+    background-color: #004ff9;;
+    box-shadow: 1px 1px 5px 1px black;
+}
+
+#delete-modal {
+    background: #fff;
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 4px;
+    top: 12%;
+    z-index: 1000;
+    display: none;
+    opacity: 1;
+    position: fixed;
+    cursor: auto;
+    box-shadow: 0 3px 7px black;
+}
+#delete-modal-button{
+    text-align: end;
+    margin: 5px;
+}
+#delete-modal-button>p{
+    font-size: 16px;
+    font-family: 'Merriweather','sans-serif';
+}
+#delete-modal-button>button:nth-child(1){
+    color: white;
+    background-color: blue;
+    padding: 4px 11px;
+}
+#delete-modal-button>button:nth-child(2){
+    padding: 4px 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+#modal{
+    display: flex;
+    justify-content: center;
+}
